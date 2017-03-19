@@ -31,7 +31,7 @@ curl -s -c ~/cookies.txt --data-urlencode "login=$username" --data-urlencode "pa
 curl -s -b ~/cookies.txt --data-urlencode 'btnCheckOut=Check Out' --data-urlencode 'chkALLOK=ALLOK' http://rams.hyson.com/employee_checkin.asp > ~/.loginlog/loggedout.html
 if (( $(cat ~/.loginlog/loggedout.html | tr -d '\r\n' | grep -Eo "Your check out time .*" | sed -e 's/<[^>]*>//g' | wc -l) < 1 )); then
 	echo ""
-	echo "This probably didn't work; try rams.hyson.com ."
+	echo "This probably didn't work; try rams.hyson.com"
 else
 	echo ""
 	cat ~/.loginlog/loggedout.html | tr -d '\r\n' | grep -Eo "Your check out time .*" | sed -e 's/<[^>]*>//g'

@@ -32,7 +32,7 @@ curl -s -c ~/cookies.txt --data-urlencode "login=$username" --data-urlencode "pa
 curl -s -b ~/cookies.txt --data-urlencode 'btnCheckIn=Check In' http://rams.hyson.com/employee_checkin.asp > ~/.loginlog/loggedin.html
 if (( $(cat ~/.loginlog/loggedin.html | tr -d '\r\n' | grep -Eo "Your check in time .*" | sed -e 's/<[^>]*>//g' | wc -l) < 1 )); then
 	echo ""
-	echo "This probably didn't work; check rams.hyson.com ."
+	echo "This probably didn't work; check rams.hyson.com"
 else
 	echo ""
 	cat ~/.loginlog/loggedin.html | tr -d '\r\n' | grep -Eo "Your check in time .*" | sed -e 's/<[^>]*>//g'
